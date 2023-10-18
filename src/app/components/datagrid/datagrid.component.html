@@ -1,0 +1,27 @@
+<div class="container">
+  <dx-data-grid
+    [allowColumnReordering]="true"
+    [allowColumnResizing]="true"
+    [columnAutoWidth]="true"
+    [height]="600"
+    [dataSource]="products$ | async"
+    keyExpr="id">
+
+    <dxo-editing
+      mode="popup"
+      [allowUpdating]="true"
+      [allowDeleting]="true"
+      [allowAdding]="true">
+    </dxo-editing>
+
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showInfo]="true"
+        [showNavigationButtons]="true">
+    </dxo-pager>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-search-panel [visible]="true"></dxo-search-panel>
+  </dx-data-grid>
+</div>
+
